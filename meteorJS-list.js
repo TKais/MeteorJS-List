@@ -16,9 +16,19 @@ if (Meteor.isClient) {
         text: userInput,
         createdAt: new Date()
       });
-      // event.target.text.value = "";          //clear the form
 
-      // return false;                          //prevent default form submit
+      event.target.text.value = "";          //clear the form
+
+      return false;                          //prevent default form submit
+    }
+  });
+
+  Template.task.events({
+    "click .toggle-checked": function(){
+      Tasks.update(this._id, {$set: {checked: ! this.checked}});
+    },
+    "click .delete": function(){
+      Tasks.remove(this._id);
     }
   });
 }
