@@ -32,3 +32,6 @@ if (Meteor.isClient) {
     }
   });
 }
+
+//deploy using 'meteor deploy meteorJS-list.meteor.com'
+//Browser: http://meteorJS-list.meteor.com
